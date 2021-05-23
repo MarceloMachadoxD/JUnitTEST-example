@@ -5,14 +5,12 @@ O teste implementado consiste em validar se o método de saque é descontada a t
 
 Método testado:
 ```java
-{
     public void deposit(Double amount) {
         if (amount > 0) {
             amount -= amount * DEPOSIT_FEE_PERCENTAGE;
             balance += amount;
         }
     }
-}
 ```
 
 Configuração do teste:
