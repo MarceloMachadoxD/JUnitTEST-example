@@ -1,4 +1,4 @@
-Teste básico com Junit utilizando o método AAA para validação.
+Teste básico com Junit5 e Java11 utilizando o método AAA para validação.
 
 
 O teste implementado consiste em validar se o método de saque é descontada a taxa de depósito.
