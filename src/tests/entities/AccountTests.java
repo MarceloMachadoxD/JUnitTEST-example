@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class AccountTests {
 
     @Test
-    public void depositShouldIncreaseBalanceWhenPositiveAmount(){
+    public void depositShouldIncreaseBalanceWhenPositiveAmount() {
 
         //Arrange
         double amount = 200.0;
@@ -22,5 +22,24 @@ public class AccountTests {
         Assertions.assertEquals(expectedValue, acc.getBalance());
 
     }
+
+
+    @Test
+    public void depositShouldDoNothingIfAmountIsLessThenZero() {
+
+        //Arrange
+        double amount = -200.0;
+        double expectedValue = 400.0;
+
+        Account acc = new Account(1L, expectedValue);
+
+        //Act
+        acc.deposit(amount);
+
+        //Assert
+        Assertions.assertEquals(expectedValue, acc.getBalance());
+
+    }
+
 
 }
