@@ -62,5 +62,22 @@ public class AccountTests {
 
     }
 
+    @Test
+    public void withdrawShouldTrowExceptionIfAmountIsGreaterThenThanBalance() {
+
+        //Arrange
+        double initialValue = 5000.0;
+        double incorrectWithdrawValue = 15000.0;
+
+        Account acc = AccountFabric.createAccount(initialValue);
+
+        //Assert
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            //Act
+            acc.withdraw(incorrectWithdrawValue);
+
+        });
+    }
+
 
 }
