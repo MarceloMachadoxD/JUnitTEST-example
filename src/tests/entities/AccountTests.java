@@ -43,4 +43,21 @@ public class AccountTests {
     }
 
 
+    @Test
+    public void fullWithdrawShouldEmptyValue() {
+
+        //Arrange
+        double expectedValue = 0;
+
+        Account acc = AccountFabric.createAccount(5000.0);
+
+        //Act
+        acc.fullWithdraw();
+
+        //Assert
+        Assertions.assertEquals(expectedValue, acc.getBalance());
+
+    }
+
+
 }
