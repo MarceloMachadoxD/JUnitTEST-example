@@ -3,6 +3,7 @@ package tests.entities;
 import entities.Account;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import tests.factory.AccountFabric;
 
 public class AccountTests {
 
@@ -13,7 +14,7 @@ public class AccountTests {
         double amount = 200.0;
         double expectedValue = 196.0;
 
-        Account acc = new Account(1L, 0.0);
+        Account acc = AccountFabric.createEmptyAccount();
 
         //Act
         acc.deposit(amount);
@@ -31,7 +32,7 @@ public class AccountTests {
         double amount = -200.0;
         double expectedValue = 400.0;
 
-        Account acc = new Account(1L, expectedValue);
+        Account acc = AccountFabric.createAccount(expectedValue);
 
         //Act
         acc.deposit(amount);
